@@ -37,6 +37,7 @@ extension Application {
                 let new = EventLoopGroupConnectionPool(
                     source: APNSConnectionSource(configuration: configuration),
                     maxConnectionsPerEventLoop: 1,
+                    requestTimeout: .hours(1),
                     logger: self.application.logger,
                     on: self.application.eventLoopGroup
                 )
